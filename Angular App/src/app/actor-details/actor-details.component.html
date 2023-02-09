@@ -1,0 +1,28 @@
+<div *ngIf="actor">
+    <h2>{{actor.name | uppercase}} Details</h2>
+
+    <form class="form-container" (ngSubmit)="onSubmit()" #actorForm="ngForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="actor.name" name="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Date of birth</mat-label>
+            <input readonly matInput [matDatepicker]="picker" [(ngModel)]="actor.dateOfBirth" name="dateOfBirth"
+            (click)="picker.open()">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Nationality</mat-label>
+            <input matInput [(ngModel)]="actor.nationality" name="nationality">
+        </mat-form-field>
+
+        <div class="button-container">
+            <button type="submit" mat-raised-button color="accent"
+                [disabled]="!actorForm.form.valid">Submit</button>
+        </div>
+    </form>
+</div>
