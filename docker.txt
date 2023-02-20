@@ -1,8 +1,0 @@
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=WinterDemoAcademy123!" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
-
-
-docker pull cljubicbu/winter-academy-demo-backend
-docker pull mcr.microsoft.com/mssql/server:2022-latest
- 
-docker-compose build
-docker-compose up -d
